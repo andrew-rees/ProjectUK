@@ -1,0 +1,8 @@
+List of UK cities - as a class. Each with properties like name, population, industries etc. Get this from api used in BusStops, and add own ones like Industry. Programme calculates growth and can assign new values to these properties based on their interaction with Circumstances.
+List of UK Rivers
+List of UK mountains
+List of UK national parks
+List of people I know. Programme allocates them to places at random at any point.
+Circumstances - occurrances like 'good weather', 'economic slump' that can occur that affect things.
+OS 7th Series maps that contain the above
+User can choose to do various things - distance between 2 objects based on long/lat co-ords; ask a question about a class based on their properties eg how long is the River Severn; visit websites; where a person is;
