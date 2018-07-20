@@ -1,3 +1,7 @@
+const postcodeAPI = require("../APIs/postcodeAPI")
+
+
+
 module.exports = class mountain {
     constructor(name, height, lat, long) {
         this.name = name;
