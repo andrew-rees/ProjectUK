@@ -1,0 +1,11 @@
+1) Put all class files into classes, and export
+2) Get API file into Promise All and make sure they are called in sequence
+a) Get postcode and return long-lat
+b) use long-lat to get sunrise and sunset
+c) use long-lat to get weather
+d) parse weather to return in format
+3) User input - decide  how to accept and process
+a) Give user choice of type, then list of choices within type
+4) Every time a user chooses a place, randomly allocate a person to that place, and return it
+5) Show place on map in website
+6) Allow users to choose place on map

@@ -10,9 +10,10 @@
 //const rp = require("request-promise");
 const request = require("request");
 const moment = require("moment");
+const readline = require("readline-sync");
 
-// console.log("Please input your postcode: ")
-const postcodeInput = "SK6 6HS"
+console.log("Please input your postcode: ")
+const postcodeInput = readline.prompt()
 
 let promisePostcode = new Promise((resolve, reject) => {
         request(`https://api.postcodes.io/postcodes/${postcodeInput}`, function (error, response, body) {
@@ -36,16 +37,17 @@ let promisePostcode = new Promise((resolve, reject) => {
                     //console.log('error:', error);
                     //console.log('statusCode:', response && response.statusCode);
                     let parsedReturn = JSON.parse(body)
-                    console.log(parsedReturn.results.sunrise)
-                    console.log(parsedReturn.results.sunset)
+                    //console.log(parsedReturn)
+                    console.log(`Sunrise: ${parsedReturn.results.sunrise}`)
+                    console.log(`Sunset: ${parsedReturn.results.sunset}`)
                 });
                 //gets lat and log and requests weather from an API
                 request(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&APPID=29fbf13534ce1c365d6ba2d7c71b8030`, function (error, response, body) {
                     //console.log('error:', error);
                     //console.log('statusCode:', response && response.statusCode);
                     let parsedReturn = JSON.parse(body)
-                    console.log(parsedReturn);
-                    //console.log(`The weather here is: ${parsedReturn.weather}`)
+                    //console.log(parsedReturn);
+                    console.log(`The weather is: ${parsedReturn.weather[0].description} \nThe temperature here is: ${Math.trunc((parsedReturn.main.temp - 273))} Celcius`)
     
                 })
             },
